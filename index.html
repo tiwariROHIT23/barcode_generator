@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Barcode Generator </title>
+	<meta name="viewport" content="width=device-width,.initial-scale = 1.0 , maximum-scale=1.0, user-scalable = no">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="index.css">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body> 
+
+	<!-- *************LOG IN PAGE****************** -->
+	<div class="container loginpage">
+		<h2>LOGIN</h2>
+		<div class="login">
+		 
+			<form>
+				
+				<input class="same1" id="em" type="email" name="Email" placeholder="Email" size="37" required>
+				<br><br>
+				<input class="same1" id="pass" type="password" name="password" placeholder="Password" size="37" required>
+			</form>
+
+		
+				<div class="formbtn">
+					<button class="btn" onclick="login()">Login</button>
+					<button class="btn" onclick="signup()">Signup</button>
+				</div>
+			  <p id="para" style="color: tomato; margin-top: 1rem; padding-left: 2rem;"></p>
+		</div>
+	</div>
+
+
+	<!-- ********SIGNUP PAGE*************************** -->
+	<div class="wrapper">
+		<h2>SIGN UP</h2>
+		<div class="sign">
+			<form>
+				<input id="userName" class="same" type="text" name="name" placeholder="Your Name" required size="40"><br><br>
+				<input id="signUpEmail" class="same" type="email" name="Email" placeholder="Email" required size="40"><br><br>
+				<input id="pass1" class="same" type="password" name="password" placeholder="Password (minlength 5)" minlength="5" required size="40"><br><br>
+				<input id="pass2" class="same" type="password" name="password" placeholder="Confirm Password." required size="40">
+				<br>
+			</form><br>
+			<button class="btn" style=" margin: 0 auto;" onclick="submit()">Submit</button>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<!-- ****************BARCODE PAGE************************** -->
+	<div class="row barcodepage" >
+		<div class="codeContainer" >
+			<h3 class="banner text-center">Barcode Generator</h3>
+
+			<div class="pd-15">
+				<div class="form-group">
+					<label>Fill code</label>
+					<input type="text" name="barcodeValue" id="barcodeValue" class="form-control" value="123456">
+				</div>
+
+				<div class="form-group">
+					<label>Barcode Types</label>
+					<select name="barcodeType" id="barcodeType" class="form-control">
+						<option value="code128">Code 128</option>
+						<option value="codabar">Codabar</option>
+						<option value="code39">Code 39</option>
+						<option value="msi">MSI</option>
+						<option value="pharmacode">Pharmacode</option>
+						<option value="ITF">ITF</option>
+						<option value="ITF-14">ITF-14</option>
+						<option value="EAN / UPC">EAN / UPC</option>
+					</select>
+				</div>
+
+				<div class="form-group">
+					<label>Show Text</label>
+					<select name="showText" id="showText" class="form-control" required>
+						<option value="true">Yes</option>
+						<option value="false">No</option>
+					</select>
+				</div>
+
+				<input type="button" onclick="generateBarcode()" class="btn form-control" value="Generate">
+
+				<div class="text-center">
+					<svg id="barcode"></svg>
+				</div>
+
+			</div>
+		</div>
+	</div>
+
+
+	<script type="text/javascript"
+		src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.3/dist/JsBarcode.all.min.js"></script>
+	<script type="text/javascript">
+		function generateBarcode() {
+			const barcodeValue = document.getElementById("barcodeValue").value;
+			const barcodeType = document.getElementById("barcodeType").value;
+			const showText = document.getElementById("showText").value;
+			JsBarcode("#barcode", barcodeValue, {
+				format: barcodeType,
+				displayValue: showText,
+				lineColor: "#24292e",
+				width: 2,
+				height: 40,
+				fontSize: 20
+			});
+		}
+		generateBarcode();
+	</script>
+	<script src="index.js"></script>
+</body>
+
+</html>

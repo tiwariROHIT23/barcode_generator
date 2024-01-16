@@ -1,0 +1,225 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(160deg, #112d4e 0%, #3f72af 100%);
+    width: 100vw;
+    height: 100vh;
+}
+
+
+:root {
+    --colorDark1: #112D4E;
+    --colorDark2: #3F72AF;
+}
+
+
+/* *************for log in page*********** */
+.container {
+   display: flex;
+   flex-direction: column;
+   background-color: #fff; 
+   width: 30%; 
+   height: 35%;
+   position: absolute;
+   top: 30%;
+   left: 35.5%;
+   border-radius: 2rem;
+   flex-wrap: wrap;
+}
+.container h2 {
+    color: var(--colorDark1);
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+.loginpage{
+    display: flex;
+}
+
+.loginpage.active{
+    display: none;
+}
+
+.login {
+   /* position: absolute;
+   top: 30%;
+   left: 8%; */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   margin-top: 1rem;
+   
+}
+.same1{
+  border-radius: 3rem;
+  border: 2px solid grey;
+  padding-left: 8px;
+  height: 3.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+input:focus { 
+    outline: none !important;
+    border-color: #719ECE;
+    box-shadow: 0 0 10px #719ECE;
+ }
+
+.formbtn {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    margin: 0 auto;
+    margin-top: 2rem;
+    
+}
+.formbtn,button{
+    width: 33rem;
+}
+
+
+
+/* **************** */
+
+
+
+
+/* *-***for hiding bar code page******** */
+.barcodepage{
+    display: none;
+}
+.barcodepage.active{
+    display: flex;
+}
+/*****************/
+
+
+
+
+/*******************for signup page************************/
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff; 
+    width: 35%; 
+    height: 48%;
+    position: absolute;
+    top: 30%;
+    left: 35.5%;
+    border-radius: 2rem;
+    flex-wrap: wrap;
+}
+.wrapper h2 {
+    color: var(--colorDark1);
+    opacity: 0.75;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+
+.sign {
+    display: flex;
+   flex-direction: column;
+   justify-content: center;
+   text-align: center;
+   margin-top: 1rem;
+}
+
+.same {
+    border-radius: 3rem;
+  border: 2px solid grey;
+  padding-left: 8px;
+  height: 3.5rem;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
+
+.wrapper {
+    display: none;
+}
+
+.wrapper.active {
+    display: flex;
+}
+
+
+/**************************************************/
+#para{
+    color: white;
+}
+
+
+/********for bar code page***********/
+
+
+.codeContainer {
+   
+    
+    margin: 0 auto;
+    margin-top: 12rem;
+    width: 449px;
+    border-radius: 10px;
+    height: 430px;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+}
+
+.banner {
+    background: #e0dddd;
+    font-weight: 700;
+    margin: 0;
+    padding: 15px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.pd-15 {
+    padding: 15px;
+}
+
+.btn {
+    background: var(--colorDark2);
+    border-radius: 2rem;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2d5c96;
+    color: #fff;
+}
+
+@media only screen and (max-width: 442px) {
+    .codeContainer{
+        width: 380px;
+        height: 430px;
+    }
+   .container{
+    width: min-content;
+    height: min-content;
+   }
+   .container h2{
+    margin: 0 auto;
+    letter-spacing: 0;
+    font-size: smaller;
+    
+   }
+  }
+  
+
