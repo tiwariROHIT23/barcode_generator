@@ -1,2 +1,2 @@
 # barcode_generator
-i made this Barcode generator using HTML, CSS  and JAVASCRIPT.
+[Click here to project](https://tiwarirohit23.github.io/barcode_generator/)
